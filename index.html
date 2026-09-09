@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rolledoats</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFJN9VW9Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KMFJN9VW9Z');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PRTXGK9H');</script>
+<!-- End Google Tag Manager -->
+
+  <style>
+    body {
+      background-color: lightskyblue;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: black;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 30px;
+      text-align: center;
+    }
+
+    img {
+      width: 300px;
+      max-width: 100%;
+    }
+
+    .social-media {
+      margin-top: 30px;
+    }
+
+    .social-media a {
+      display: inline-block;
+      background-color: white;
+      color: black;
+      text-decoration: none;
+      padding: 10px 15px;
+      margin: 5px;
+    }
+
+    .newsletter {
+      background-color: white;
+      padding: 25px;
+      margin: 30px auto;
+      max-width: 500px;
+    }
+
+    input {
+      padding: 10px;
+      width: 250px;
+      max-width: 80%;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- Header -->
+  <header>
+
+    <h1>Rolledoats</h1>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="newsletter.html">Newsletter</a>
+    </nav>
+  </header>
+
+
+  <!-- Main Content -->
+  <main>
+
+    <h2>Welcome to Rolledoats!</h2>
+
+    <p>
+      Welcome to my simple website.
+    </p>
+
+    <p>
+      Hello there! I'm learning HTML, CSS, and JavaScript.
+    </p>
+
+
+    <!-- Image -->
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZTSSLKVyr5IAtIQKZG_gICTKyby_G5rdf1TWDWX-otQ&s=10"
+      alt="The Rolled Oats"
+    >
+
+
+    <!-- Things I Like -->
+    <h2>Things I Like</h2>
+
+    <ul style="display: inline-block; text-align: left;">
+      <li>Making websites</li>
+      <li>Cats</li>
+      <li>Naps in sunbeams</li>
+    </ul>
+
+
+    <!-- Social Media -->
+    <div class="social-media">
+
+      <h2>Follow Me</h2>
+
+      <p>Visit my social media accounts:</p>
+
+      <a id="facebook-click" href="https://www.facebook.com/login/" target="_blank">
+        Facebook
+      </a>
+
+      <a id="instagram-click" href="https://www.instagram.com/accounts/login/" target="_blank">
+        Instagram
+      </a>
+
+      <a href="https://x.com/i/flow/login" target="_blank">
+        X / Twitter
+      </a>
+
+      <a href="https://accounts.google.com/ServiceLogin?service=youtube" target="_blank">
+        YouTube
+      </a>
+
+      <a href="https://www.tiktok.com/login" target="_blank">
+        TikTok
+      </a>
+
+    </div>
+
+
+    <!-- Newsletter -->
+    <div class="newsletter">
+
+      <h2>Subscribe to My Newsletter</h2>
+
+      <p>
+        Enter your email address to receive updates.
+      </p>
+
+      <form id="newsletterForm">
+
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        >
+
+        <br>
+
+        <button type="submit">
+          Subscribe
+        </button>
+
+      </form>
+
+      <p id="message"></p>
+
+      <p>
+        <a href="newsletter.html">
+          Learn more about the newsletter
+        </a>
+      </p>
+
+    </div>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <p>
+      &copy; 2026 Rolledoats. All rights reserved.
+    </p>
+
+    <p>
+      <a href="newsletter.html">
+        Subscribe to Newsletter
+      </a>
+    </p>
+
+  </footer>
+
+
+  <!-- JavaScript -->
+  <script>
+
+    const newsletterForm =
+      document.getElementById("newsletterForm");
+
+    const message =
+      document.getElementById("message");
+
+
+    newsletterForm.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const email =
+        document.getElementById("email").value;
+
+      message.textContent =
+        "Thank you for subscribing, " + email + "!";
+
+      newsletterForm.reset();
+
+    });
+
+  </script>
+  
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRTXGK9H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+</body>
+
+</html>
