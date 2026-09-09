@@ -182,7 +182,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         Enter your email address to receive updates.
       </p>
 
-      <form id="newsletterForm-footer">
+      <form id="newsletterForm-footer-footer">
 
         <input
           type="email"
@@ -231,14 +231,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- JavaScript -->
   <script>
 
-    const newsletterForm =
-      document.getElementById("newsletterForm");
+    const newsletterForm-footer =
+      document.getElementById("newsletterForm-footer");
 
     const message =
       document.getElementById("message");
 
 
-    newsletterForm.addEventListener("submit", function(event) {
+    newsletterForm-footer.addEventListener("submit", function(event) {
 
       event.preventDefault();
 
@@ -248,7 +248,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       message.textContent =
         "Thank you for subscribing, " + email + "!";
 
-      newsletterForm.reset();
+      newsletterForm-footer.reset();
 
     });
 
