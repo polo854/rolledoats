@@ -5,25 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rolledoats</title>
-
-  <!-- Google Consent Mode v2 -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-
-  // Default: do not grant consent
-  gtag('consent', 'default', {
-    'analytics_storage': 'denied',
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'wait_for_update': 500
-  });
-</script>
-  
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFJN9VW9Z"></script>
 <script>
@@ -113,36 +94,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       padding: 20px;
       margin-top: 30px;
     }
-    .cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: white;
-  padding: 20px;
-  border-top: 1px solid #ccc;
-  text-align: center;
-  z-index: 9999;
-}
-
-.cookie-banner h2 {
-  margin-top: 0;
-}
-
-.cookie-banner p {
-  max-width: 700px;
-  margin: 0 auto 15px;
-}
-
-.cookie-banner button {
-  padding: 10px 20px;
-  margin: 5px;
-  cursor: pointer;
-}
-
-.cookie-banner.hidden {
-  display: none;
-}
   </style>
 </head>
 
@@ -276,22 +227,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   </footer>
 
-  <!-- Cookie Consent Banner -->
-<div id="cookieBanner" class="cookie-banner">
-
-  <h2>Privacy & Cookies</h2>
-
-  <p>
-    We use cookies and similar technologies to understand how visitors
-    use our website and to improve our services. With your permission,
-    we may also use data for advertising and marketing purposes.
-  </p>
-
-  <button id="acceptCookies">Accept</button>
-  <button id="rejectCookies">Reject</button>
-
-</div>
-
 
   <!-- JavaScript -->
   <script>
@@ -316,45 +251,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       newsletterForm-footer.reset();
 
     });
-    <script>
-  const cookieBanner = document.getElementById("cookieBanner");
-  const acceptCookies = document.getElementById("acceptCookies");
-  const rejectCookies = document.getElementById("rejectCookies");
 
-  const consentChoice = localStorage.getItem("cookieConsent");
-
-  if (consentChoice) {
-    cookieBanner.classList.add("hidden");
-  }
-
-  acceptCookies.addEventListener("click", function () {
-
-    gtag("consent", "update", {
-      "analytics_storage": "granted",
-      "ad_storage": "granted",
-      "ad_user_data": "granted",
-      "ad_personalization": "granted"
-    });
-
-    localStorage.setItem("cookieConsent", "accepted");
-
-    cookieBanner.classList.add("hidden");
-  });
-
-  rejectCookies.addEventListener("click", function () {
-
-    gtag("consent", "update", {
-      "analytics_storage": "denied",
-      "ad_storage": "denied",
-      "ad_user_data": "denied",
-      "ad_personalization": "denied"
-    });
-
-    localStorage.setItem("cookieConsent", "rejected");
-
-    cookieBanner.classList.add("hidden");
-  });
-</script>
   </script>
   
   <!-- Google Tag Manager (noscript) -->
