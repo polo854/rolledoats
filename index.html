@@ -130,10 +130,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRTXGK9H"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
   <!-- Header -->
   <header>
 
@@ -265,14 +261,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- JavaScript -->
   <script>
 
-    const newsletterForm-footer =
-      document.getElementById("newsletterForm-footer");
+    const newsletterFormFooter =
+      document.getElementById("newsletterFormFooter");
 
     const message =
       document.getElementById("message");
 
 
-    newsletterForm-footer.addEventListener("submit", function(event) {
+    newsletterFormFooter.addEventListener("submit", function(event) {
 
       event.preventDefault();
 
@@ -282,7 +278,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       message.textContent =
         "Thank you for subscribing, " + email + "!";
 
-      newsletterForm-footer.reset();
+      newsletterFormFooter.reset();
 
     });
 
@@ -347,7 +343,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 
   </script>
-
+ <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRTXGK9H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
 </body>
 
 </html>
