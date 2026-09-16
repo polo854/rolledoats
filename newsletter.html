@@ -7,6 +7,22 @@
 
   <title>Subscribe - Rolledoats</title>
   
+  <!-- Google Consent Mode v2 - Default Consent -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFJN9VW9Z"></script>
 <script>
@@ -120,6 +136,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
 
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRTXGK9H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieBanner" class="cookie-banner">
+    <h2>Privacy & Cookies</h2>
+
+    <p>
+      We use cookies and similar technologies to understand how visitors
+      use our website and to improve our services. With your permission,
+      we may also use data for advertising and marketing purposes.
+    </p>
+
+    <button type="button" id="acceptCookies">Accept</button>
+    <button type="button" id="rejectCookies">Reject</button>
+  </div>
+
+
   <div class="container">
 
     <h1>Subscribe to Our Newsletter</h1>
@@ -155,13 +191,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <script>
-    const form = document.getElementById("newsletterForm");
-    const message = document.getElementById("message");
+    // Newsletter form
+    const form =
+      document.getElementById("newsletterForm");
+
+    const message =
+      document.getElementById("message");
 
     form.addEventListener("submit", function(event) {
       event.preventDefault();
 
-      const email = document.getElementById("email").value;
+      const email =
+        document.getElementById("email").value;
 
       message.textContent =
         "Thank you for subscribing! " + email + " has been added.";
@@ -169,71 +210,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       form.reset();
     });
 
-      // Cookie consent banner
-  const cookieBanner =
-    document.getElementById("cookieBanner");
 
-  const acceptCookies =
-    document.getElementById("acceptCookies");
+    // Cookie consent banner
+    const cookieBanner =
+      document.getElementById("cookieBanner");
 
-  const rejectCookies =
-    document.getElementById("rejectCookies");
+    const acceptCookies =
+      document.getElementById("acceptCookies");
 
+    const rejectCookies =
+      document.getElementById("rejectCookies");
 
-  // Check if the visitor already made a choice
-  const consentChoice =
-    localStorage.getItem("cookieConsent");
+    const consentChoice =
+      localStorage.getItem("cookieConsent");
 
+    if (consentChoice) {
+      cookieBanner.classList.add("hidden");
+    }
 
-  if (consentChoice) {
-    cookieBanner.classList.add("hidden");
-  }
+    // Accept
+    acceptCookies.addEventListener("click", function() {
+      gtag("consent", "update", {
+        "analytics_storage": "granted",
+        "ad_storage": "granted",
+        "ad_user_data": "granted",
+        "ad_personalization": "granted"
+      });
 
-
-  // Accept button
-  acceptCookies.addEventListener("click", function() {
-
-    gtag("consent", "update", {
-      "analytics_storage": "granted",
-      "ad_storage": "granted",
-      "ad_user_data": "granted",
-      "ad_personalization": "granted"
+      localStorage.setItem("cookieConsent", "accepted");
+      cookieBanner.classList.add("hidden");
     });
 
-    localStorage.setItem(
-      "cookieConsent",
-      "accepted"
-    );
+    // Reject
+    rejectCookies.addEventListener("click", function() {
+      gtag("consent", "update", {
+        "analytics_storage": "denied",
+        "ad_storage": "denied",
+        "ad_user_data": "denied",
+        "ad_personalization": "denied"
+      });
 
-    cookieBanner.classList.add("hidden");
-
-  });
-
-
-  // Reject button
-  rejectCookies.addEventListener("click", function() {
-
-    gtag("consent", "update", {
-      "analytics_storage": "denied",
-      "ad_storage": "denied",
-      "ad_user_data": "denied",
-      "ad_personalization": "denied"
+      localStorage.setItem("cookieConsent", "rejected");
+      cookieBanner.classList.add("hidden");
     });
-
-    localStorage.setItem(
-      "cookieConsent",
-      "rejected"
-    );
-
-    cookieBanner.classList.add("hidden");
-
-  });
-
   </script>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRTXGK9H"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
+
 
 </body>
 </html>
