@@ -84,10 +84,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-top: 20px;
       font-weight: bold;
     }
+
+    .cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  z-index: 9999;
+}
+
+.cookie-banner h2 {
+  margin-top: 0;
+}
+
+.cookie-banner p {
+  max-width: 700px;
+  margin: 0 auto 15px;
+}
+
+.cookie-banner button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.cookie-banner.hidden {
+  display: none;
+}
   </style>
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRTXGK9H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
   <div class="container">
 
@@ -137,12 +172,69 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       form.reset();
     });
+
+      // Cookie consent banner
+  const cookieBanner =
+    document.getElementById("cookieBanner");
+
+  const acceptCookies =
+    document.getElementById("acceptCookies");
+
+  const rejectCookies =
+    document.getElementById("rejectCookies");
+
+
+  // Check if the visitor already made a choice
+  const consentChoice =
+    localStorage.getItem("cookieConsent");
+
+
+  if (consentChoice) {
+    cookieBanner.classList.add("hidden");
+  }
+
+
+  // Accept button
+  acceptCookies.addEventListener("click", function() {
+
+    gtag("consent", "update", {
+      "analytics_storage": "granted",
+      "ad_storage": "granted",
+      "ad_user_data": "granted",
+      "ad_personalization": "granted"
+    });
+
+    localStorage.setItem(
+      "cookieConsent",
+      "accepted"
+    );
+
+    cookieBanner.classList.add("hidden");
+
+  });
+
+
+  // Reject button
+  rejectCookies.addEventListener("click", function() {
+
+    gtag("consent", "update", {
+      "analytics_storage": "denied",
+      "ad_storage": "denied",
+      "ad_user_data": "denied",
+      "ad_personalization": "denied"
+    });
+
+    localStorage.setItem(
+      "cookieConsent",
+      "rejected"
+    );
+
+    cookieBanner.classList.add("hidden");
+
+  });
+
   </script>
-  
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRTXGK9H"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
 
 </body>
 </html>
