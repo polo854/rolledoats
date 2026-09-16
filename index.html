@@ -5,6 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rolledoats</title>
+  <!-- Google Consent Mode v2 - Default Consent -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFJN9VW9Z"></script>
 <script>
@@ -130,6 +146,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <body>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieBanner" class="cookie-banner">
+    <h2>Privacy & Cookies</h2>
+
+    <p>
+      We use cookies and similar technologies to understand how visitors
+      use our website and to improve our services. With your permission,
+      we may also use data for advertising and marketing purposes.
+    </p>
+
+    <button type="button" id="acceptCookies">Accept</button>
+    <button type="button" id="rejectCookies">Reject</button>
+  </div>
+
   <!-- Header -->
   <header>
 
@@ -262,7 +293,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script>
 
     const newsletterFormFooter =
-      document.getElementById("newsletterFormFooter");
+      document.getElementById("newsletterForm-footer");
 
     const message =
       document.getElementById("message");
