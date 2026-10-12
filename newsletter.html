@@ -1,32 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-
   <title>Subscribe - Rolledoats</title>
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFJN9VW9Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFJN9VW9Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-KMFJN9VW9Z');
-</script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-KMFJN9VW9Z');
+  </script>
 
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PRTXGK9H');</script>
-<!-- End Google Tag Manager -->
-  <style>
-  
+  <script>
+    (function(w,d,s,l,i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
 
+      var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l !== 'dataLayer' ? '&l=' + l : '';
+
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PRTXGK9H');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
     body {
       background-color: lightskyblue;
       font-family: Arial, sans-serif;
@@ -53,6 +66,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     input[type="email"] {
       width: 90%;
+      box-sizing: border-box;
       padding: 12px;
       margin: 15px 0;
       border: 1px solid #aaa;
@@ -84,20 +98,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-top: 20px;
       font-weight: bold;
     }
-    
   </style>
 </head>
 
 <body>
-
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRTXGK9H"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-PRTXGK9H"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <div class="container">
-
     <h1>Subscribe to Our Newsletter</h1>
 
     <p>
@@ -105,51 +121,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </p>
 
     <form id="newsletterForm">
-
       <input
         type="email"
         id="email"
+        name="email"
         placeholder="Enter your email"
+        autocomplete="email"
         required
       >
 
       <br>
 
-      <button type="submit">
-        Subscribe
-      </button>
-
+      <button type="submit">Subscribe</button>
     </form>
 
-    <p id="message"></p>
+    <p id="message" aria-live="polite"></p>
 
     <a class="back-link" href="index.html">
       ← Back to Homepage
     </a>
-
   </div>
 
-
   <script>
-    // Newsletter form
-    const form =
-      document.getElementById("newsletterForm");
+    const form = document.getElementById('newsletterForm');
+    const emailInput = document.getElementById('email');
+    const message = document.getElementById('message');
 
-    const message =
-      document.getElementById("message");
-
-    form.addEventListener("submit", function(event) {
+    form.addEventListener('submit', function(event) {
       event.preventDefault();
 
-      const email =
-        document.getElementById("email").value;
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Send a newsletter signup event to GA4.
+      // Do not send the visitor's email address to Google Analytics.
+      window.dataLayer = window.dataLayer || [];
+
+      window.dataLayer.push({
+        event: 'newsletter_signup',
+        form_name: 'newsletterForm',
+        page_type: 'newsletter'
+      });
 
       message.textContent =
-        "Thank you for subscribing! " + email + " has been added.";
+        'Thank you for subscribing! Your form was submitted.';
 
       form.reset();
     });
-
-
+  </script>
 </body>
 </html>
