@@ -14,14 +14,6 @@
       dataLayer.push(arguments);
     }
 
-    gtag('consent', 'default', {
-      'analytics_storage': 'denied',
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'wait_for_update': 500
-    });
-  </script>
 
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFJN9VW9Z"></script>
@@ -100,37 +92,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-top: 20px;
       font-weight: bold;
     }
-
-    .cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: white;
-  padding: 20px;
-  border-top: 1px solid #ccc;
-  text-align: center;
-  z-index: 9999;
-}
-
-.cookie-banner h2 {
-  margin-top: 0;
-}
-
-.cookie-banner p {
-  max-width: 700px;
-  margin: 0 auto 15px;
-}
-
-.cookie-banner button {
-  padding: 10px 20px;
-  margin: 5px;
-  cursor: pointer;
-}
-
-.cookie-banner.hidden {
-  display: none;
-}
+    
   </style>
 </head>
 
@@ -140,20 +102,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRTXGK9H"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-  <!-- Cookie Consent Banner -->
-  <div id="cookieBanner" class="cookie-banner">
-    <h2>Privacy & Cookies</h2>
-
-    <p>
-      We use cookies and similar technologies to understand how visitors
-      use our website and to improve our services. With your permission,
-      we may also use data for advertising and marketing purposes.
-    </p>
-
-    <button type="button" id="acceptCookies">Accept</button>
-    <button type="button" id="rejectCookies">Reject</button>
-  </div>
 
 
   <div class="container">
@@ -209,52 +157,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       form.reset();
     });
-
-
-    // Cookie consent banner
-    const cookieBanner =
-      document.getElementById("cookieBanner");
-
-    const acceptCookies =
-      document.getElementById("acceptCookies");
-
-    const rejectCookies =
-      document.getElementById("rejectCookies");
-
-    const consentChoice =
-      localStorage.getItem("cookieConsent");
-
-    if (consentChoice) {
-      cookieBanner.classList.add("hidden");
-    }
-
-    // Accept
-    acceptCookies.addEventListener("click", function() {
-      gtag("consent", "update", {
-        "analytics_storage": "granted",
-        "ad_storage": "granted",
-        "ad_user_data": "granted",
-        "ad_personalization": "granted"
-      });
-
-      localStorage.setItem("cookieConsent", "accepted");
-      cookieBanner.classList.add("hidden");
-    });
-
-    // Reject
-    rejectCookies.addEventListener("click", function() {
-      gtag("consent", "update", {
-        "analytics_storage": "denied",
-        "ad_storage": "denied",
-        "ad_user_data": "denied",
-        "ad_personalization": "denied"
-      });
-
-      localStorage.setItem("cookieConsent", "rejected");
-      cookieBanner.classList.add("hidden");
-    });
-  </script>
-
 
 
 </body>
