@@ -1,33 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rolledoats</title>
-  <!-- Google Consent Mode v2 - Default Consent -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFJN9VW9Z"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
     }
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMFJN9VW9Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    gtag('js', new Date());
+    gtag('config', 'G-KMFJN9VW9Z');
+  </script>
 
-  gtag('config', 'G-KMFJN9VW9Z');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PRTXGK9H');</script>
-<!-- End Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+
+      var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l !== 'dataLayer' ? '&l=' + l : '';
+
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PRTXGK9H');
+  </script>
+  <!-- End Google Tag Manager -->
 
   <style>
     body {
@@ -101,165 +110,102 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       padding: 20px;
       margin-top: 30px;
     }
+  </style>
+</head>
 
-  <!-- Header -->
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-PRTXGK9H"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header>
-
     <h1>Rolledoats</h1>
-
     <nav>
       <a href="index.html">Home</a>
       <a href="newsletter.html">Newsletter</a>
     </nav>
   </header>
 
-
-  <!-- Main Content -->
   <main>
-
     <h2>Welcome to Rolledoats!</h2>
 
-    <p>
-      Welcome to my simple website.
-    </p>
+    <p>Welcome to my simple website.</p>
+    <p>Hello there! I'm learning HTML, CSS, and JavaScript.</p>
 
-    <p>
-      Hello there! I'm learning HTML, CSS, and JavaScript.
-    </p>
-
-
-    <!-- Image -->
     <img
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZTSSLKVyr5IAtIQKZG_gICTKyby_G5rdf1TWDWX-otQ&s=10"
-      alt="The Rolled Oats"
-    >
+      alt="The Rolled Oats">
 
-
-    <!-- Things I Like -->
     <h2>Things I Like</h2>
-
-    <ul style="display: inline-block; text-align: left;">
+    <ul style="display:inline-block;text-align:left;">
       <li>Making websites</li>
       <li>Cats</li>
       <li>Naps in sunbeams</li>
     </ul>
 
-
-    <!-- Social Media -->
     <div class="social-media">
-
       <h2>Follow Me</h2>
-
       <p>Visit my social media accounts:</p>
 
-      <a id="facebook" href="https://www.facebook.com/login/" target="_blank">
-        Facebook
-      </a>
-
-      <a id="instagram" href="https://www.instagram.com/accounts/login/" target="_blank">
-        Instagram
-      </a>
-
-      <a id="twitter" href="https://x.com/i/flow/login" target="_blank">
-        X / Twitter
-      </a>
-
-      <a id="youtube" href="https://accounts.google.com/ServiceLogin?service=youtube" target="_blank">
-        YouTube
-      </a>
-
-      <a id="tiktok" href="https://www.tiktok.com/login" target="_blank">
-        TikTok
-      </a>
-
+      <a id="facebook" href="https://www.facebook.com/login/" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a id="instagram" href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a id="twitter" href="https://x.com/i/flow/login" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+      <a id="youtube" href="https://accounts.google.com/ServiceLogin?service=youtube" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a id="tiktok" href="https://www.tiktok.com/login" target="_blank" rel="noopener noreferrer">TikTok</a>
     </div>
 
-
-    <!-- Newsletter -->
     <div class="newsletter">
-
       <h2>Subscribe to My Newsletter</h2>
-
-      <p>
-        Enter your email address to receive updates.
-      </p>
+      <p>Enter your email address to receive updates.</p>
 
       <form id="newsletterForm-footer">
-
         <input
           type="email"
           id="email"
+          name="email"
           placeholder="Enter your email"
-          required
-        >
-
+          required>
         <br>
-
-        <button type="submit">
-          Subscribe
-        </button>
-
+        <button type="submit">Subscribe</button>
       </form>
 
-      <p id="message"></p>
+      <p id="message" aria-live="polite"></p>
 
       <p>
-        <a href="newsletter.html">
-          Learn more about the newsletter
-        </a>
+        <a href="newsletter.html">Learn more about the newsletter</a>
       </p>
-
     </div>
-
   </main>
 
-
-  <!-- Footer -->
   <footer>
-
-    <p>
-      &copy; 2026 Rolledoats. All rights reserved.
-    </p>
-
-    <p>
-      <a href="newsletter.html">
-        Subscribe to Newsletter
-      </a>
-    </p>
-
+    <p>&copy; 2026 Rolledoats. All rights reserved.</p>
+    <p><a href="newsletter.html">Subscribe to Newsletter</a></p>
   </footer>
 
-
-  <!-- JavaScript -->
   <script>
-
     const newsletterFormFooter =
-      document.getElementById("newsletterForm-footer");
+      document.getElementById('newsletterForm-footer');
 
-    const message =
-      document.getElementById("message");
+    const message = document.getElementById('message');
+    const emailInput = document.getElementById('email');
 
-
-    newsletterFormFooter.addEventListener("submit", function(event) {
-
+    newsletterFormFooter.addEventListener('submit', function(event) {
       event.preventDefault();
 
-      const email =
-        document.getElementById("email").value;
+      const email = emailInput.value.trim();
 
       message.textContent =
-        "Thank you for subscribing, " + email + "!";
+        'Thank you for subscribing, ' + email + '!';
 
       newsletterFormFooter.reset();
-
     });
-
   </script>
- <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRTXGK9H"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  
 </body>
-
 </html>
